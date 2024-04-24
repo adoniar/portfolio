@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Adonia Richards">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title>Adonia Richards · Portfolio</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
+
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+
+      a {
+      color: blue;
+      }
+
+      a {
+        background-color: transparent;
+      }
+
+      /* About Me section */
+      .about .col-md-6 {
+        margin-top: 2rem;
+      }
+
+      @media (max-width: 991px) {
+        .about .col-md-6 {
+          margin-top: 0; /* To reset margin on smaller screens */
+        }
+      }
+
+      .about p {
+        margin-bottom: 3rem;
+        line-height: 1.5;
+      }
+
+      .gif-css-section {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        background-color: #7a7a2a; 
+      }
+
+      .pdf-section {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        background-color: #479d47;
+      }
+
+      .pdf-section h2 {
+        margin-bottom: 2rem;
+      }
+
+      .bright-shadow {
+         box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* Adjust shadow color and intensity as needed */
+      }
+    </style>
+
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    
+<header data-bs-theme="dark">
+  <div class="collapse text-bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4>React Native Portfolio</h4>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li><a href="#about-section" class="about">About Me</a></li>
+            <li><a href="#gif-section" class="gif">GIFs of each React and React Native Project</a></li>
+            <li><a href="#final-section" class="pdf">PDFs of App designs</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <strong>Menu</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section id="about-section" class="py-5 text-center container about">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <img src="assets/images/Adonia Richards_profile photo.jpg" class="img-fluid" alt="Adonia Richards" width="200" height="200">
+          </div>
+          <div class="col-md-6">
+            <h1 class="fw-light">About Me</h1>
+            <h2 class="lead text-body-secondary"><strong>Adonia Richards</strong></h2>
+            <p>Digital Media, University of Central Florida</p>
+            <p>
+              I'm passionate about digital technology. This is because of the 
+              emerging technologies and platforms of digital media that have evolved overtime. 
+              By having a great interest in coding and designing, I explore innovative ways to integrate creativity 
+              with technology. My journey in the digital media field has been inspirational for me to do my best. My objectives 
+              of creating interesting designs or developing lines of code, help me to find joy in every step of the process. 
+              Through my work, I aspire to create meaningful experiences. In Mobile Development I have developed 
+              skills of designing, developing, and problem solving.
+            </p>
+            <p>More Information about my projects can be found here.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+
+      <section  id="gif-section" class="py-5 text-center container gif gif-css-section">
+        <h2 class="fw-light">GIFs of each React and React Native Project</h2>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="assets/images/1gif1.png" class="card-img-top gif-preview" data-src="assets/gif/gif1.gif" data-placeholder="assets/images/1gif1.png" alt="Image Description">
+              <div class="card-body">
+                <p class="card-text">This is a gif of a React Native Todo App with a design of checkboxes to mark the tasks complete and a text box to add tasks.
+                  A problem that I encountered was implementing the checkboxes. I solved this problem by correcting the react native component and making it 
+                  a clickable checkbox on the application.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary view-gif-btn" data-gif-id="gif1">View</button>
+                  </div>
+                  <small class="text-body-secondary">Todo App</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="assets/images/2gif2.png" class="card-img-top gif-preview" data-src="assets/gif/gif2.gif" data-placeholder="assets/images/2gif2.png" alt="Image Description">
+              <div class="card-body">
+                <p class="card-text">This is a gif of a React Native Quiz App with multiple choice, true or false, multiple answer questions.
+                  A problem that I encountered was adding the results screen. I fixed this by including the stack navigation for different screens. My design choices
+                  for the results screen was to mark the correct answers green.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary view-gif-btn" data-gif-id="gif2">View</button>
+                  </div>
+                  <small class="text-body-secondary">Quiz App</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="assets/images/3gif3.png" class="card-img-top gif-preview" data-src="assets/gif/gif3.gif" data-placeholder="assets/images/3gif3.png" alt="Image Description">
+              <div class="card-body">
+                <p class="card-text">This is a gif of a React Object Oriented Design App with a textbox and a filter feature. A problem that I encountered was
+                  adding the filter feature. I solved this problem by using arrow functions. I chose to have a simple design with a vertical layout to make 
+                  it easier for the viewer to view the application.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary view-gif-btn" data-gif-id="gif3">View</button>
+                  </div>
+                  <small class="text-body-secondary">Object Oriented Design</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="assets/images/4gif4.png" class="card-img-top gif-preview" data-src="assets/gif/gif4.gif" data-placeholder="assets/images/4gif4.png" alt="Image Description">
+              <div class="card-body">
+                <p class="card-text">This is a gif of a React Menu. The skills and design functionality that I chose was including a components folder and importing the menu into the App. A problem that 
+                  I encountered was the menu repeating twice. I solved this by importing the components into the app.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary view-gif-btn" data-gif-id="gif4">View</button>
+                  </div>
+                  <small class="text-body-secondary">React Menu</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="assets/images/5gif5.png" class="card-img-top gif-preview" data-src="assets/gif/gif5.gif" data-placeholder="assets/images/5gif5.png" alt="Image Description">
+              <div class="card-body">
+                <p class="card-text">This is a gif of a React Native Exercise App. The purpose of this project is to design an app that is usefull with timers and reset buttons. A problem 
+                  that I encountered was having the pushups exercise screen return to the main menu. I was able to solve this by correcting my curly brackets syntax.  
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary view-gif-btn" data-gif-id="gif5">View</button>
+                  </div>
+                  <small class="text-body-secondary">Exercise App</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="assets/images/6gif6.png" class="card-img-top gif-preview" data-src="assets/gif/gif6.gif" data-placeholder="assets/images/6gif6.png" alt="Image Description">
+              <div class="card-body">
+                <p class="card-text">This is a gif of a React Native Exercise App. A skill that I used was including the stack navigation to organize the different screens. 
+                  A problem that I encountered was including a lap recorder element. I was able to solve this problem by importing my timer file into my lap file. I designed this app with 
+                  a simple layout.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary view-gif-btn" data-gif-id="gif6">View</button>
+                  </div>
+                  <small class="text-body-secondary">New Exercise App Feature</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="assets/images/7gif7.png" class="card-img-top gif-preview" data-src="assets/gif/gif7.gif" data-placeholder="assets/images/7gif7.png" alt="Image Description">
+              <div class="card-body">
+                <p class="card-text">This is a gif of a React Native Login and Registration App. A problem that I encountered was adding a placeholder string before the text is entered.
+                  I made this design choice so that the viewer can input text in the textbox. I solved this problem by including TextInput in React Native in the beginning of the app.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary view-gif-btn" data-gif-id="gif7">View</button>
+                  </div>
+                  <small class="text-body-secondary">Login and Registration Todo App</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="assets/images/8gif8.png" class="card-img-top gif-preview" data-src="assets/gif/gif8.gif" data-placeholder="assets/images/8gif8.png" alt="Image Description">
+              <div class="card-body">
+                <p class="card-text">This is a Gif of a React Native Exercise App. The purpose of this app is to design an exercise app with functionality and a color scheme.
+                  The color scheme I chose was blue, white, and black. A problem that I encountered was returning to the main menu. I solved this by creating functions for different screens.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary view-gif-btn" data-gif-id="gif8">View</button>
+                  </div>
+                  <small class="text-body-secondary">React Native Exercise App</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>  
+      <section  id="final-section" class="pdf-section py-5 text-center container pdf">
+        <h2 class="fw-light">PDFs of App designs</h2>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="assets/images/pdf1-thumbnail.png">
+              <div class="card-body">
+                <p class="card-text">This is a design of a Todo App. I used Figma to design this app. My design choices was to have a color scheme of green, white, and black. A problem 
+                  That I encountered was creating checkboxes. I solved this project by adjusting the size of the checkboxes to fit the font size of the text.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary view-pdf-btn" data-pdf-src="assets/pdf/pdf1.pdf">View</button>
+                  </div>
+                  <small class="text-body-secondary">Todo App Mobile Design</small>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="assets/images/pdf2-thumbnail.png">
+            <div class="card-body">
+              <p class="card-text">This is a redesigned OrangeTheory Fitness App. A problem that I encountered was 
+              designing the home screen's background. I solved this by including a light blue color and illustrations to make the app's home screen look interesting. 
+              I used Figma to design this app.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary view-pdf-btn" data-pdf-src="assets/pdf/pdf2.pdf">View</button>
+                </div>
+                <small class="text-body-secondary">Redesigned Fitness App</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="assets/images/pdf3-thumbnail.png">
+            <div class="card-body">
+              <p class="card-text">This is a design of Study Flash Card App. I chose to design a color scheme of gray, black, and white. A problem that 
+                I had was creating the flashcard's sizing. I solved this problem by using the line tool to custom the flashcard's size. The purpose 
+                of this project is to design a study app with flash cards. I used Adobe XD technology. It includes to have a login screen and a study screen 
+                with flashcards. 
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary view-pdf-btn" data-pdf-src="assets/pdf/pdf3.pdf">View</button>
+                </div>
+                <small class="text-body-secondary">Study Flash Card App</small>
+              </div>
+            </div>
+          </div>
+        </div>  
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="assets/images/pdf4-thumbnail.png">
+            <div class="card-body">
+              <p class="card-text">This is a design of a Fitness App with added features. I chose to add design features like a select workout description for the 
+                user to chose from. The color scheme is gray and red. A problem that I encountered was displaying the select workout description at the top of the 
+                design. I solved this by moving the textbox to the top. I used Adobe XD to create this.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary view-pdf-btn" data-pdf-src="assets/pdf/pdf4.pdf">View</button>
+                </div>
+                <small class="text-body-secondary">Fitness App</small>
+              </div>
+            </div>
+          </div>
+        </div>  
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="assets/images/pdf5-thumbnail.png">
+            <div class="card-body">
+              <p class="card-text">This is a design of the original Fitness App. I chose to include exercsies like pushups and planks. The color scheme is gray with a profile icon in the top left 
+                to return to the main page. Problems that I encountered was including the descriptions of each workout on the main page and resizing the images. Originally, the images were oversized 
+              for the app's design but I was able to scale down the sizing.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary view-pdf-btn" data-pdf-src="assets/pdf/pdf5.pdf">View</button>
+                </div>
+                <small class="text-body-secondary">Fitness App</small>
+              </div>
+            </div>
+          </div> 
+        </div>
+      </section>
+      <!-- PDF Modal -->
+      <div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="pdfModalLabel">PDF Viewer</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <iframe id="pdfViewer" src="" frameborder="0" width="100%" height="600"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- GIF Modal -->
+      <div class="modal fade" id="gifModal" tabindex="-1" aria-labelledby="gifModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="gifModalLabel">GIF Viewer</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+              <img id="gifViewer" src="" class="img-fluid" alt="GIF">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer class="text-body-secondary py-5">
+  <div class="container">
+    <p class="float-end mb-1">
+      <a href="#">Back to top</a>
+    </p>
+    <p class="mb-1">Contact Information</p>
+    <p class="mb-0"> <a href="#about-section">linkedIn</a>.</p>
+  </div>
+</footer>
+<script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  // Function to open GIF modal
+  function openGifModal(gifSrc) {
+    // source of the GIF viewer image
+    document.getElementById('gifViewer').src = gifSrc;
+    // Show the modal
+    $('#gifModal').modal('show');
+  }
+
+  // click event listener to all "View" buttons for GIFs
+  document.querySelectorAll('.view-gif-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      // Get the GIF source from data attribute
+      const gifSrc = this.closest('.card').querySelector('.gif-preview').dataset.src;
+      // Open the GIF modal
+      openGifModal(gifSrc);
+    });
+  });
+</script>
+
+<script>
+  // Function to open PDF modal
+  function openPdfModal(pdfSrc) {
+    // source of the PDF viewer
+    document.getElementById('pdfViewer').src = pdfSrc;
+    // Show the modal
+    $('#pdfModal').modal('show');
+  }
+
+  // click event listener to all "View" buttons
+  document.querySelectorAll('.view-pdf-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      // Get the PDF source from data attribute
+      const pdfSrc = this.dataset.pdfSrc;
+      // Open the PDF modal
+      openPdfModal(pdfSrc);
+    });
+  });
+</script>
+
+</body>
+</html>
